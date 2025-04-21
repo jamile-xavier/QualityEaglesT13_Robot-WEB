@@ -23,13 +23,6 @@ jobs:
           pip install Faker
           pip install pyyaml
 
-      - name: Verificar Firefox e GeckoDriver
-        run: |
-          which firefox
-          firefox --version
-          which geckodriver
-          geckodriver --version
-
       - name: Executando os testes de Front do Robot
         run: |
           robot --variable BROWSER:firefox --outputdir results/ .
@@ -54,7 +47,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
+      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot-deploy-firefox/report.html
 
     steps:
       - name: Setup Pages
