@@ -1,0 +1,4 @@
+robotframework==7.1.1
+robotframework-seleniumlibrary==6.7.1
+Faker==4.0.0
+pyyaml=6.0.2

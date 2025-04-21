@@ -1,0 +1,19 @@
+LOGIN:
+  url: https://quality-eagles-front.qacoders.dev.br
+  endpoint: /login
+
+HOME:
+  url: https://quality-eagles-front.qacoders.dev.br/home
+  endpoint: /home
+
+COMPANY:
+  url: https://quality-eagles-front.qacoders.dev.br
+  endpoint: /company
+
+CLIENT:
+  url: https://quality-eagles-front.qacoders.dev.br
+  endpoint: /client
+
+USER:
+  url: https://quality-eagles-front.qacoders.dev.br
+  endpoint: /user

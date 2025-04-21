@@ -1,0 +1,76 @@
+name: Robot Framework Front Tests
+
+on: [push, workflow_dispatch]
+
+jobs:
+  test:
+    name: Front Tests Robot
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Clonar arquivos do repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Instalação das Dependencias
+        run: |
+          pip install robotframework
+          pip install --upgrade robotframework-seleniumlibrary
+          pip install Faker
+          pip install pyyaml
+
+      - name: Verificar Firefox e GeckoDriver
+        run: |
+          which firefox
+          firefox --version
+          which geckodriver
+          geckodriver --version
+
+      - name: Executando os testes de Front do Robot
+        run: |
+          robot --variable BROWSER:firefox --outputdir results/ .
+
+      - name: Test Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: robot-framework-front-report
+          path: results
+
+  deploy:
+    name: Deploy GitHub Pages 🌐
+    runs-on: ubuntu-24.04
+    if: always()
+    needs:
+      - test
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot/report.html
+
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: robot-framework-front-report
+          path: results/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: results/
+
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
