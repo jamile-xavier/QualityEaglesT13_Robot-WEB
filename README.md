@@ -17,7 +17,6 @@ Teste de Automação Front de ERP com Robot Framework
 - [Tecnologias](#tecnologias)
 - [Executando o projeto](#Executando-o-projeto)
 - [Autora](#autora)
-- [Equipe](#equipe)
 - [Licença](#licença)
 
 ### Funcionalidades
@@ -99,16 +98,6 @@ Teste de usuários:
 [Github](https://github.com/jamile-xavier)
 
 [Linkedin](https://www.linkedin.com/in/jamile-xavier/)
-
-### Equipe
-
-- Cristian (TechLead)
-- Carol
-- Italo
-- Iza
-- Jamile
-- Lucas
-- Tadeu
 
 ### Licença
 

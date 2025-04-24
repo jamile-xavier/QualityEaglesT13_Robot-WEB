@@ -6,7 +6,7 @@ Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 Library    ../../libs/get_fake_company.py
 
-Suite Setup     Abrir o navegador e realizar login   user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    browser=firefox    
+Suite Setup     Abrir o navegador com chrome e realizar login   user=${MAIL}    password=${PASSWORD}    url=${LOGIN.url}${LOGIN.endpoint}    
 Suite Teardown    Fechar o navegador
 
 *** Test Cases ***
@@ -30,6 +30,7 @@ TC02 - Realizar cadastro de empresa sem razão social
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo razão social é obrigatório
     Capture Page Screenshot    prints/cadastro-empresa-sem-razão-social.png
 
 TC03 - Realizar cadastro de empresa com 10 dígitos no CNPJ
@@ -48,6 +49,7 @@ TC03 - Realizar cadastro de empresa com 10 dígitos no CNPJ
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=CNPJ inválido
     Capture Page Screenshot    prints/cadastro-empresa-cnpj-invalido.png
 
 TC04 - Realizar cadastro de empresa sem contato responsável
@@ -66,6 +68,7 @@ TC04 - Realizar cadastro de empresa sem contato responsável
     ...    neighborhood=${company}[neighborhood]
     ...    street=${company}[street]
     ...    number=${company}[number]
+    Wait Until Element Contains    locator=class:css-bbipig  text=O campo nome do responsável é obrigatório
     Capture Page Screenshot    prints/cadastro-empresa-sem-contato-responsável.png
 
 TC05 - Consultar Lista de Empresas com sucesso

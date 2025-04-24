@@ -10,6 +10,13 @@ Suite Setup     Abrir o navegador e realizar login  user=${MAIL}    password=${P
 Suite Teardown    Fechar o navegador   
 
 *** Test Cases ***
+TC01 - Consultar lista de usuário com sucesso
+    Navegar Para Página    url=${USER.url}    url_complementar=${USER.endpoint}
+    Wait Until Element Is Visible    class:css-nhyiur
+    Capture Page Screenshot    prints/consulta-lista-usuario-sucesso.png 
+
+## Testes com erros
+
 #TC01 - Realizar cadastro de usuário com sucesso
 #    Navegar Para Página    url=${USER.url}    url_complementar=${USER.endpoint}
 #    Realizar cadastro de usuario    ${user}
@@ -27,10 +34,3 @@ Suite Teardown    Fechar o navegador
 #    Realizar cadastro de usuario com falha    nomeCompleto=${user}[name]     email=${user}[email]  perfilAcesso=Administrador    cpf=   senha=${user}[password]   confirmarSenha=${user}[password] 
 #    Capture Page Screenshot    prints/cadastro-usuario-sem-cpf.png   
 #    Fechar o navegador   
-
-
-TC04 - Consultar lista de usuário com sucesso
-    Navegar Para Página    url=${USER.url}    url_complementar=${USER.endpoint}
-    Wait Until Element Is Visible    class:css-nhyiur
-    Capture Page Screenshot    prints/consulta-lista-usuario-sucesso.png 
-

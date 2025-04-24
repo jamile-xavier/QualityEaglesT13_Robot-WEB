@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    ../../libs/get_fake_company.py
 Resource    ../pages/company_variables.robot
 
-
 *** Keywords ***
 Realizar cadastro de empresa 
     [Documentation]       Keyword usada para realizar cadastro de uma empresa

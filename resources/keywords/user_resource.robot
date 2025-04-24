@@ -31,5 +31,3 @@ Realizar cadastro de usuario com falha
     Input Text    ${cadastroUsuario.senha}    ${senha}
     Input Text    ${cadastroUsuario.confirmarSenha}     ${confirmarSenha}
     Click Button    ${btnSalvarNovo}
-
-

@@ -47,7 +47,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://jamile-xavier.github.io/qualityeagles-academy13-front-robot-deploy-firefox/report.html
+      url: https://jamile-xavier.github.io/QualityEaglesT13_Robot-WEB/report.html
 
     steps:
       - name: Setup Pages
