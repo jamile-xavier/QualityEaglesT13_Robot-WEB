@@ -4,7 +4,7 @@ Resource    ../pages/login_variables.robot
 Resource    ../keywords/navigation_resource.robot
 Variables   ../../fixtures/environments.yaml
 
-Suite Setup    Abrir Navegador  url=${LOGIN.url}${LOGIN.endpoint}    browser=firefox      
+Suite Setup    Abrir Chrome Com Opcoes  url=${LOGIN.url}${LOGIN.endpoint}    
 Suite Teardown    Fechar o navegador
 
 *** Test Cases ***
@@ -18,3 +18,5 @@ TC02 - Realizar login com senha inválida
     
 TC03 - Realizar login com email inválido
     Realizar login sem sucesso    ${MAIL_INVALID}   ${PASSWORD}
+
+   
