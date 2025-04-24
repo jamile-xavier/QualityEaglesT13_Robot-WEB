@@ -25,7 +25,7 @@ jobs:
 
       - name: Executando os testes de Front do Robot
         run: |
-          robot --variable BROWSER:firefox --outputdir results/ .
+          robot --outputdir results/ .
 
       - name: Test Report
         uses: actions/upload-artifact@v4
